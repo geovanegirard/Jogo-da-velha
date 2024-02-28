@@ -55,3 +55,18 @@ p:hover {
     color: rgb(255, 255, 255);
     font-size: 2rem;
 }
+
+.dado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    border: solid 1px;
+    padding: 2rem;
+}
+
+.containerJogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
