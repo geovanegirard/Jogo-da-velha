@@ -14,8 +14,8 @@ body {
 
 .container {
     background-color: rgb(221, 221, 221);
-    display: flex;  
-    flex-direction: column;  
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 400px;
@@ -45,9 +45,24 @@ p {
     cursor: pointer;
     font-size: 1.5rem;
     font-weight: bold;
-}   
+}
 
 p:hover {
     color: rgb(80, 78, 78);
     font-size: 2rem;
+}
+
+.dado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    border: solid 1px;
+    padding: 2rem;
+}
+
+.containerJogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
