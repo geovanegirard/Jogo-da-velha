@@ -64,16 +64,46 @@ function criarJogo(idElemento) {
 const botoes = document.getElementsByClassName('dado')
 
 const arrayX = []
-for (const i of botoes) {
-    const conteudo = i.innerHTML
-    i.addEventListener('click', () => {
-        if (!arrayX.includes(conteudo)) {
-            arrayX.push(i.innerHTML)
-            i.style.backgroundColor = 'red'
-        }else{
-        }
+const arrayY = []
+let vez = 0
+for (const botao of botoes) {
+    const conteudo = botao.innerHTML
+    botao.addEventListener('click', () => {
+        console.log('VEZ->  ',vez)
         
-        console.log(arrayX)
+        if (vez % 2 == 0) {
+            if (!arrayX.includes(conteudo)) {
+                arrayX.push(conteudo)
+                botao.style.backgroundColor = 'red'
+                botao.classList.add('testeaqui')
+
+            } 
+        } else {
+            if (!arrayY.includes(conteudo)) {
+                arrayY.push(botao.innerHTML)
+                botao.style.backgroundColor = 'green'
+                botao.disabled = true
+
+            }
+        }
+        vez++
+        console.log('array X: ',arrayX)
+        console.log('array Y: ',arrayY)
 
     })
+}
+
+let player1, player2 = {
+    'nome': '',
+    'vitorias': 0,
+    'derrotas': 0,
+    'empates': 0,
+}
+
+function jogo(p1, p2) {
+    const escolhaX = []
+    const escolhaY = []
+
+
+
 }
