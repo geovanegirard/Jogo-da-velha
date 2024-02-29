@@ -60,7 +60,7 @@ p:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blue;
+    background-color: lightblue;
     border: solid 1px;
     padding: 2rem;
 }

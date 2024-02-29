@@ -8,29 +8,29 @@ function criarJogo(idElemento) {
     //criar a Coluna 1 e seus dados
     const divColuna1 = document.createElement("div")
     const dado11 = document.createElement("div")
-    dado11.innerHTML = '1'
+    //dado11.innerHTML = '1'
     const dado12 = document.createElement("div")
-    dado12.innerHTML = '4'
+    // dado12.innerHTML = '4'
     const dado13 = document.createElement("div")
-    dado13.innerHTML = '7'
+    // dado13.innerHTML = '7'
 
     //criar a Coluna 2 e seus dados
     const divColuna2 = document.createElement("div")
     const dado21 = document.createElement("div")
-    dado21.innerHTML = '2'
+    // dado21.innerHTML = '2'
     const dado22 = document.createElement("div")
-    dado22.innerHTML = '5'
+    //dado22.innerHTML = '5'
     const dado23 = document.createElement("div")
-    dado23.innerHTML = '8'
+    //dado23.innerHTML = '8'
 
     //criar a Coluna 3 e seus dados
     const divColuna3 = document.createElement("div")
     const dado31 = document.createElement("div")
-    dado31.innerHTML = '3'
+    //dado31.innerHTML = '3'
     const dado32 = document.createElement("div")
-    dado32.innerHTML = '6'
+    //dado32.innerHTML = '6'
     const dado33 = document.createElement("div")
-    dado33.innerHTML = '9'
+    //dado33.innerHTML = '9'
 
     //cria a primeira Coluna
     divColuna1.appendChild(dado11).classList.add("dado")
@@ -61,6 +61,10 @@ function criarJogo(idElemento) {
     mainContainer.appendChild(containerJogo).classList.add('containerJogo')
 }
 
+const col1 = document.getElementsByClassName('coluna-1')[0]
+
+console.log(col1.childNodes)
+
 const botoes = document.getElementsByClassName('dado')
 
 const arrayX = []
@@ -69,28 +73,27 @@ let vez = 0
 for (const botao of botoes) {
     const conteudo = botao.innerHTML
     botao.addEventListener('click', () => {
-        console.log('VEZ->  ',vez)
-        
-        if (vez % 2 == 0) {
-            if (!arrayX.includes(conteudo)) {
-                arrayX.push(conteudo)
-                botao.style.backgroundColor = 'red'
-                botao.classList.add('testeaqui')
-
-            } 
-        } else {
-            if (!arrayY.includes(conteudo)) {
-                arrayY.push(botao.innerHTML)
-                botao.style.backgroundColor = 'green'
-                botao.disabled = true
-
+        let esteRound = round(vez)
+        if (botao.innerHTML == "") {
+            if (esteRound) {
+                botao.innerHTML = 'X'
+                vez++
+            } else {
+                botao.innerHTML = 'O'
+                vez--
             }
         }
-        vez++
-        console.log('array X: ',arrayX)
-        console.log('array Y: ',arrayY)
+
 
     })
+}
+
+function round(vez) {
+    if (vez == 0) {
+        return true
+    } else {
+        return false
+    }
 }
 
 let player1, player2 = {
@@ -107,3 +110,21 @@ function jogo(p1, p2) {
 
 
 }
+
+/*
+  if (vez % 2 == 0) {
+            if (!arrayX.includes(conteudo)) {
+                arrayX.push(conteudo)
+                botao.style.backgroundColor = 'red'
+                botao.classList.add('testeaqui')
+
+            } 
+        } else {
+            if (!arrayY.includes(conteudo)) {
+                arrayY.push(botao.innerHTML)
+                botao.style.backgroundColor = 'green'
+                botao.disabled = true
+
+            }
+        }
+*/
