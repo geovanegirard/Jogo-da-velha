@@ -52,8 +52,23 @@ p {
 }   
 
 p:hover {
-    color: rgb(255, 255, 255);
+    color: skyblue;
+    font-size: 1.8rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.voltar {
+    color: white;
+    padding: 5px 0px;
     font-size: 2rem;
+}
+
+.voltar:hover {
+    color: skyblue;
 }
 
 .dado{
@@ -62,7 +77,8 @@ p:hover {
     align-items: center;
     background-color: lightblue;
     border: solid 1px;
-    padding: 2rem;
+    height: 5rem;
+    width: 5rem;
 }
 
 .containerJogo{
