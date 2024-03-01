@@ -71,10 +71,18 @@ a {
     color: skyblue;
 }
 
+#restart-button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
 .dado{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 3em;
     background-color: lightblue;
     border: solid 1px;
     height: 5rem;

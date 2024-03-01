@@ -14,48 +14,37 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     let currentPlayer = 'X';
-    let gameActive = true;
+    let gameActive = false;
 
     startGame();
 
     function startGame() {
         cells.forEach(cell => {
             cell.innerText = '';
-            cell.addEventListener('click', handleClick, { once: true });
         });
-        setHoverClass();
         gameActive = true;
+        playRound();
     }
 
-    function handleClick(event) {
-        const cell = event.target;
-        if (!gameActive || cell.innerText !== '') return;
-        placeMark(cell);
+    function playRound() {
+        if (!gameActive) return;
+        
+        const emptyCells = [...cells].filter(cell => cell.innerText === '');
+        const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+        placeMark(randomCell);
+
         if (checkWin(currentPlayer)) {
             endGame(false);
         } else if (isDraw()) {
             endGame(true);
         } else {
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            if (currentPlayer === 'O') {
-                setTimeout(cpuTurn, 500);
-            }
-            setHoverClass();
+            setTimeout(playRound, 500); // Delay para visualização
         }
     }
 
     function placeMark(cell) {
         cell.innerText = currentPlayer;
-    }
-
-    function setHoverClass() {
-        board.classList.remove('x');
-        board.classList.remove('o');
-        if (currentPlayer === 'X') {
-            board.classList.add('x');
-        } else {
-            board.classList.add('o');
-        }
     }
 
     function checkWin(player) {
@@ -68,9 +57,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function endGame(draw) {
         if (draw) {
-            alert('Empate!');
+            console.log('Draw!');
         } else {
-            alert(`${currentPlayer} Ganhou!`);
+            console.log(`${currentPlayer} wins!`);
         }
         gameActive = false;
     }
@@ -79,12 +68,6 @@ document.addEventListener("DOMContentLoaded", function() {
         return [...cells].every(cell => {
             return cell.innerText !== '';
         });
-    }
-
-    function cpuTurn() {
-        const emptyCells = [...cells].filter(cell => cell.innerText === '');
-        const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
-        handleClick({ target: randomCell });
     }
 
     restartButton.addEventListener('click', startGame);

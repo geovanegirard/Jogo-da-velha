@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Jogo da velha</title>
+    <link rel="stylesheet" href="../cpu.css">
 </head>
 <body>
-    <section class="container">
+    <div class="container">
         <h1>CPU vs CPU</h1>
-        <div id="">
+        <div id="board" class="board">
+            <div class="cell" data-cell-index="0"></div>
+            <div class="cell" data-cell-index="1"></div>
+            <div class="cell" data-cell-index="2"></div>
+            <div class="cell" data-cell-index="3"></div>
+            <div class="cell" data-cell-index="4"></div>
+            <div class="cell" data-cell-index="5"></div>
+            <div class="cell" data-cell-index="6"></div>
+            <div class="cell" data-cell-index="7"></div>
+            <div class="cell" data-cell-index="8"></div>
         </div>
         <a href="../index.html" class="voltar">Voltar</a>
-    </section>   
-    
-    <script src="../main.js"></script>
+        <button id="restart-button">Recomeçar</button>
+    </div>
+    <script src="../cpu.js"></script>
 </body>
 </html>

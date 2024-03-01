@@ -1,5 +1,4 @@
 
-
 criarJogo('teste')
 function criarJogo(idElemento) {
     const mainContainer = document.getElementById(idElemento);
