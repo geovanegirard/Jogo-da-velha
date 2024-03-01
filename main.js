@@ -8,28 +8,46 @@ function criarJogo(idElemento) {
     //criar a Coluna 1 e seus dados
     const divColuna1 = document.createElement("div")
     const dado11 = document.createElement("div")
+    dado11.setAttribute('linha', '1')
+    dado11.setAttribute('coluna', '1')
     //dado11.innerHTML = '1'
     const dado12 = document.createElement("div")
+    dado12.setAttribute('linha', '2')
+    dado12.setAttribute('coluna', '1')
     // dado12.innerHTML = '4'
     const dado13 = document.createElement("div")
+    dado13.setAttribute('linha', '3')
+    dado13.setAttribute('coluna', '1')
     // dado13.innerHTML = '7'
 
     //criar a Coluna 2 e seus dados
     const divColuna2 = document.createElement("div")
     const dado21 = document.createElement("div")
+    dado21.setAttribute('linha', '1')
+    dado21.setAttribute('coluna', '2')
     // dado21.innerHTML = '2'
     const dado22 = document.createElement("div")
+    dado11.setAttribute('linha', '2')
+    dado11.setAttribute('coluna', '2')
     //dado22.innerHTML = '5'
     const dado23 = document.createElement("div")
+    dado11.setAttribute('linha', '1')
+    dado11.setAttribute('coluna', '2')
     //dado23.innerHTML = '8'
 
     //criar a Coluna 3 e seus dados
     const divColuna3 = document.createElement("div")
     const dado31 = document.createElement("div")
+    dado11.setAttribute('linha', '1')
+    dado11.setAttribute('coluna', '1')
     //dado31.innerHTML = '3'
     const dado32 = document.createElement("div")
+    dado11.setAttribute('linha', '1')
+    dado11.setAttribute('coluna', '1')
     //dado32.innerHTML = '6'
     const dado33 = document.createElement("div")
+    dado11.setAttribute('linha', '1')
+    dado11.setAttribute('coluna', '1')
     //dado33.innerHTML = '9'
 
     //cria a primeira Coluna
