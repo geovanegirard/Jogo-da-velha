@@ -33,19 +33,19 @@ function criarJogo(idElemento) {
     //dado33.innerHTML = '9'
 
     //cria a primeira Coluna
-    divColuna1.appendChild(dado11).classList.add("dado")
-    divColuna1.appendChild(dado12).classList.add("dado")
-    divColuna1.appendChild(dado13).classList.add("dado")
+    divColuna1.appendChild(dado11).classList.add("dado", '1')
+    divColuna1.appendChild(dado12).classList.add("dado", '4')
+    divColuna1.appendChild(dado13).classList.add("dado", '7')
 
     //cria a segunda Coluna
-    divColuna2.appendChild(dado21).classList.add("dado")
-    divColuna2.appendChild(dado22).classList.add("dado")
-    divColuna2.appendChild(dado23).classList.add("dado")
+    divColuna2.appendChild(dado21).classList.add("dado", '2')
+    divColuna2.appendChild(dado22).classList.add("dado", '5')
+    divColuna2.appendChild(dado23).classList.add("dado", '8')
     //cria a terceira Coluna
 
-    divColuna3.appendChild(dado31).classList.add("dado")
-    divColuna3.appendChild(dado32).classList.add("dado")
-    divColuna3.appendChild(dado33).classList.add("dado")
+    divColuna3.appendChild(dado31).classList.add("dado", '3')
+    divColuna3.appendChild(dado32).classList.add("dado", '6')
+    divColuna3.appendChild(dado33).classList.add("dado", '9')
 
     //adiciona as Colunas na div principal
     containerJogo.appendChild(divColuna1)
@@ -61,31 +61,49 @@ function criarJogo(idElemento) {
     mainContainer.appendChild(containerJogo).classList.add('containerJogo')
 }
 
-const col1 = document.getElementsByClassName('coluna-1')[0]
-
-console.log(col1.childNodes)
 
 const botoes = document.getElementsByClassName('dado')
 
 const arrayX = []
 const arrayY = []
 let vez = 0
+let teste = [   ["", "", ""], 
+                ["", "", ""], 
+                ["", "", ""]
+            ]
 for (const botao of botoes) {
     const conteudo = botao.innerHTML
     botao.addEventListener('click', () => {
         let esteRound = round(vez)
+        let linha = botao.dataset.linha
+        let coluna = botao.dataset.coluna
         if (botao.innerHTML == "") {
             if (esteRound) {
                 botao.innerHTML = 'X'
+                teste[linha][coluna] = 'X'
                 vez++
             } else {
                 botao.innerHTML = 'O'
+                teste[linha][coluna] = 'O'
                 vez--
             }
+            vencedor(botao)
         }
 
-
     })
+}
+
+function vencedor(botao) {
+    //teste na posição x for igual ao innerhtml do botao do round atual
+    
+    let ordem = botao.className.split(' ')[1]
+    console.log(teste)
+    //teste.replace(ordem, [ordem-1])
+    
+
+    
+
+
 }
 
 function round(vez) {
@@ -127,4 +145,24 @@ function jogo(p1, p2) {
 
             }
         }
+
+
+        VENCEDOR
+         const col1 = document.getElementsByClassName('coluna-1')[0].childNodes
+    const col2 = document.getElementsByClassName('coluna-2')[0].childNodes
+    const col3 = document.getElementsByClassName('coluna-3')[0].childNodes
+
+    console.log(col1[0])
+    console.log(col2[0])
+    console.log(col3[0])
+    
+    console.log(col1[0])
+    console.log(col1[1])
+    console.log(col1[2])
+    
+    
+
+    if (col1[2].innerHTML == 'X') {
+        console.log('sudhfsdklhglsdglk')
+    }
 */
